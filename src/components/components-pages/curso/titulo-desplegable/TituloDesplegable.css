@@ -1,0 +1,44 @@
+.contenedor {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #d6e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .titulo {
+    font-size: medium;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    transition: color 0.3s ease;
+  }
+  
+  .titulo:hover {
+    color: #007bff;
+  }
+  
+  .descripcion {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    padding: 0 10px;
+  }
+  
+  .descripcion.visible {
+    max-height: 200px;  /* Ajusta la altura máxima de la descripción según el contenido */
+    opacity: 1;
+  }
+  
+  .descripcion p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+  }
+  

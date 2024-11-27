@@ -1,0 +1,58 @@
+.color-fondo{
+    /* background-color: (#d6e0e0b7); */
+    /* background-image: url(../produccion-musical/img/04.jpg); */
+    
+    background-size: cover;
+}
+
+.overlay-img2{
+    background-color: rgba(12, 12, 12, 0.534);
+    border-radius: 5px;
+    background-size: cover;
+
+}
+.overlay-img3{
+    background-color: rgba(12, 12, 12, 0.829);
+    background-size: cover;
+    padding: 50px;
+}
+
+@media(max-width: 580px){
+    .overlay-img3{
+        padding: 50px 0px;
+    }
+}
+
+.lista ol{
+    color: rgb(134, 134, 134);
+}
+.lista ul{
+    color: rgb(134, 134, 134);
+}
+.lista p{
+    color: rgb(173, 173, 173);
+}
+
+.alquileres-ancho{
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.inicio-seccion-ancho{
+    width: 75%;
+    margin: 0 auto;
+    padding: 50px 10px;
+}
+
+@media(max-width: 800px){
+    .alquileres-ancho{
+        width: 100%;
+        padding: 20px;
+    }
+    .inicio-seccion-ancho{
+        width: 100%;
+        margin: 0;
+        padding: 50px 0px;
+    }
+}
