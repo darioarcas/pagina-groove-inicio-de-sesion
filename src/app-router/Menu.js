@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import logo from './LOGO NUEVO.png';
+import { useSelector } from 'react-redux';
 
 export const Menu = () => {
+
+    const auth = useSelector(store=>{return store.auth});
+
   return (
     <nav className="navbar fixed-top d-block m-0 p-0 ">
 
@@ -80,6 +84,17 @@ export const Menu = () => {
                         <Link className="nav-link w-100" to="/tutoriales">
                             <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
                                     <h6>TUTORIALES</h6>
+                            </li>
+                        </Link>
+                        <Link className="nav-link w-100" to="/iniciar-sesion">
+                            <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
+                                    <h6>
+                                        {   
+                                            //Si el alumno inicio sesion en el navegador se muestra "Perfil" y no "Ingresar"
+                                            Object.keys(auth).length !== 0
+                                            ? "PERFIL" :"INGRESAR"
+                                        }
+                                    </h6>
                             </li>
                         </Link>
                         {/* <Link className="nav-link w-100" to="/que-es-groove">

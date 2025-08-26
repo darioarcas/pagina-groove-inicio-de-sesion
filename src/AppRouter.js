@@ -1,4 +1,7 @@
+//src/AppRouter.js
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { firebase } from "./firebase/firebase";
 import { Inicio } from './components/components-pages/Inicio';
 import { DJ } from './components/components-pages/DJ';
 import { ProduccionMusical } from './components/components-pages/ProduccionMusical';
@@ -13,30 +16,122 @@ import { Footer } from './app-router/Footer';
 import { Curso } from './components/components-pages/curso/Curso';
 import ScrollToTop from './app-router/ScrollToTop';
 import { Tutoriales } from './components/components-pages/Tutoriales';
+import { Registro } from './components/components-pages/Registro';
+import { Calendario } from './components/components-pages/gestion-alumnos/Calendario';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { login, startLogout } from './actions/auth';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
+import { PerfilUsuario } from './components/components-pages/PerfilUsuario';
+import CrearCursosPrivados from './components/helpers/CrearCursosPrivados';
+import CrearCursosPublicos from './components/helpers/CrearCursosPublicos';
+import { PagoExitoso } from './components/components-pages/respuesta-pagos/pagoExitoso';
+import { PagoFallido } from './components/components-pages/respuesta-pagos/pagoFallido';
 
 
 
 
 export const AppRouter = () => {
+    const dispatch = useDispatch();
+    const [checking, setChecking] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const mensaje = "Hola,%20quisiera%20saber%20sobre%20los%20cursos,%20precios%20y%20cupos%20disponibles.%20¡Muchas%20gracias!";  // Mensaje predefinido codificado
     const numero = "5493513417537";
+
+    const handleLogout = ()=>{
+       dispatch(startLogout());
+    }
+
+
+
+
+    useEffect(() => {
+        // Observable de firebase, detecta cuando un usuario se loguea o cierra sesión
+        firebase.auth().onAuthStateChanged(async(user) => {
+
+        if (user?.uid) {
+
+            dispatch(login(user.uid, user.displayName, user.email, user.photoURL));
+            setIsLoggedIn(true);
+
+        } else {
+            setIsLoggedIn(false);
+        }
+        setChecking(false);
+        });
+    }, [dispatch]);
+
+
+
+
+
+    // Funcion boton para probar un pago desde mercdado pago
+    const probarPago = async () => {
+        try {
+            const user = firebase.auth().currentUser;
+            if (!user) {
+            alert("Debes estar logueado para probar.");
+            return;
+            }
+
+            const token = await user.getIdToken();
+
+            const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                cursoId: "oCGt5o0drabaZz6az8nC",
+                cursoNombre: "Curso de DJ con CDJ Pioneer Inicial",
+                uid: user.uid,
+            }),
+            });
+
+            const data = await response.json();
+            console.log("✅ Preferencia creada:", data);
+
+            if (data.init_point) {
+                window.open(data.init_point, "_blank");
+            } else {
+            alert("No se generó el link de pago.");
+            }
+        } catch (error) {
+            console.error("❌ Error al generar link de pago:", error);
+            alert("Error al generar link de pago.");
+        }
+    };
+
+
+
+
+
+
+
   return (
     <>
         <BrowserRouter>
 
                 <ScrollToTop/>
+
                 <div>
 
-                <header className=' position-fixed w-100 top-0 navegacion'>
-                    <Navegacion/>
-                </header>
+                    <header className=' position-fixed w-100 top-0 navegacion'>
+                        <Navegacion/>
+                    </header>
 
                     <div className='menu'>
                         <Menu/>
                     </div>
 
+
                     {/* RUTAS */}
                     <Routes>
+                        {
+                            console.log(isLoggedIn)
+                        }
                         {/* Definimos las rutas y sus respectivos componentes */}
                         <Route path="/" element={<Inicio />} />
                         <Route path="/dj" element={<DJ />} />
@@ -44,7 +139,48 @@ export const AppRouter = () => {
                         <Route path="/alquiler-sala" element={<AlquilerEquipos />} />
                         <Route path="/tutoriales" element={<Tutoriales />} />
                         <Route path="/que-es-groove" element={<QueEsGroove />} />
-                        <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+                        <Route path="/pago-exitoso" element={<PagoExitoso />} />
+                        <Route path="/pago-fallido" element={<PagoFallido />} />
+
+                        {/* Componente Temporal para crear Estructura de cursos en Firebase */}
+                        <Route path="/crear-cursos-privados" element={<CrearCursosPrivados />} />
+                        <Route path="/crear-cursos-publicos" element={<CrearCursosPublicos />} />
+
+
+
+
+                        {/* RUTAS PUBLICAS */}
+
+                        <Route path="/iniciar-sesion" element={
+                            <PublicRoute isLoggedIn={isLoggedIn}
+                            >
+                                <IniciarSesion />
+                            </PublicRoute>
+                        } />
+
+                        <Route path="/registro" element={
+                            <PublicRoute isLoggedIn={isLoggedIn}
+                            >
+                                <Registro />
+                            </PublicRoute>
+                        } />
+
+
+
+
+                        {/* RUTA PRIVADA */}
+                        <Route path="/perfil" element={
+                            <PrivateRoute isLoggedIn={isLoggedIn}
+                            >
+                                <PerfilUsuario handleLogout={handleLogout} checking={checking}/>
+                            </PrivateRoute>
+                        } />
+
+
+
+
+                        {/* RUTA PROTEGIDA */}
+                        <Route path="/calendario" element={<Calendario />} />
 
 
                         {/* Rutas y Componentes de los Cursos */}
@@ -55,6 +191,9 @@ export const AppRouter = () => {
                         <Route path="/*" element={<Inicio />} />
 
                     </Routes>
+
+
+                    <button onClick={probarPago}>Probar conexión con backend</button>
                     
                 </div>
 

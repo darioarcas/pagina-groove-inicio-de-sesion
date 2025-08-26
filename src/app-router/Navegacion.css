@@ -6,14 +6,14 @@
 
 .navegacion {
     z-index: 5;
-    background-color: rgba(161, 161, 161, 0.3); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
     backdrop-filter: blur(3px); /* Efecto de desenfoque */
     -webkit-backdrop-filter: blur(3px); /* Para soporte en WebKit (Safari) */
   }
 
 .navegacion-menu {
     z-index: 5;
-    background-color: rgba(161, 161, 161, 0.3);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
   }
@@ -23,6 +23,7 @@
 color: rgb(255, 255, 255); /* Color de las letras */
 /*text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.9);  Sombra difusa */
 }
+
 
 
 @media(max-width: 660px){

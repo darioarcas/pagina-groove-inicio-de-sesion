@@ -15,12 +15,15 @@
     font-weight: 600;
 }
 .texto-header{
+    background-color: #1b1b1b;
     opacity: 100%;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     color: rgb(236, 236, 236);
     z-index: 2;
-    top: 25%;
+    /* top: 25%; */
+    margin-top: 55px;
+    padding: 55px 0 55px 0;
 }
 
 .text-info{
@@ -48,7 +51,7 @@
     font-size: xx-large;
 }
 .texto-header h1, h6{
-    max-width: 700px;
+    max-width: 73%;
     margin-left: 10px;
     margin-right: 10px;
     margin: 0 auto;
@@ -66,13 +69,13 @@
 }
 
 .overlay-img{
-    position: absolute; 
+    /* position: absolute; 
     top: 0px; 
     left: 0px; 
     right: 0px; 
-    bottom: 0px; 
+    bottom: 0px;  */
      /* Capa de tinte negro con 10% de opacidad */
-     background-color: rgba(0, 0, 0, 0.5); 
+     background-color: rgba(0, 0, 0, 1); 
      /* Asegura que la capa de tinte esté encima de la imagen  */
      z-index: 1; 
 }

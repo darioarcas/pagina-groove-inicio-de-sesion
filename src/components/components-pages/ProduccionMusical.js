@@ -1,4 +1,4 @@
-import ProduccionImage from './dj/img/Produ-img-header.jpg';
+// import ProduccionImage from './dj/img/Produ-img-header.jpg';
 import './dj/DJ.css';
 import { TarjetasCursos } from './dj/TarjetasCursos';
 import { ArrayProduccionMusical as ArrayCursos } from './produccion-musical/ArrayProduccionMusical';
@@ -10,18 +10,18 @@ export const ProduccionMusical = () => {
     <div>
       <header  
             // className='imagen' 
-            style={{ 
-                backgroundImage: `url(${ProduccionImage})`,
-                backgroundSize: "cover", 
-                backgroundPosition: "center",
-                width:"100%",
-                height:"600px",
-                position:"relative",
-            }}
+            // style={{ 
+            //     backgroundImage: `url(${ProduccionImage})`,
+            //     backgroundSize: "cover", 
+            //     backgroundPosition: "center",
+            //     width:"100%",
+            //     height:"600px",
+            //     position:"relative",
+            // }}
         >
 
             {/* Overlay oscuro con opacidad al 10% */}
-            <div className='overlay-img'></div>
+            {/* <div className='overlay-img'></div> */}
 
             <div className='texto-header'>
                 <h1 className='mb-4 text-white'>FORMACIÓN EN PRODUCCIÓN MUSICAL</h1>

@@ -57,7 +57,7 @@ const TarjetasCursosSlider = ({ ArrayCursos, youtube = 0 }) => {
                   />
                 </Link>
                 <div className="card-body tarjeta" style={{height:"60px"}}>
-                  <h5 className="card-title fs-6 fw-bold text-uppercase">{curso.titulo}</h5>
+                  <h5 className="card-title fs-6 fw-bold text-uppercase text-dark">{curso.titulo}</h5>
                   {/* <p className="card-text fs-6 fw-bold opacity-50">
                     <small className="text-body-secondary">{curso.descipcion}</small>
                   </p> */}

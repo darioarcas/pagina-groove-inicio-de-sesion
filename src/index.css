@@ -3,7 +3,7 @@ body {
     transition: all 0.01ms ease-in-out; /* Una transición suave */
     overflow: scroll;  /* Permite el desplazamiento */
     font-family: "Montserrat", sans-serif;
-    background-color: rgb(27, 27, 27);
+    background-color: #28282a;
 
   }
 

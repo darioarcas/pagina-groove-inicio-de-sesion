@@ -7,18 +7,18 @@ export const Tutoriales = () => {
     <div>
         <header  
             // className='imagen' 
-            style={{ 
-                backgroundImage: `url(${headerTutoriales})`,
-                backgroundSize: "cover", 
-                backgroundPosition: "center",
-                width:"100%",
-                height:"600px",
-                position:"relative",
-            }}
+            // style={{ 
+            //     backgroundImage: `url(${headerTutoriales})`,
+            //     backgroundSize: "cover", 
+            //     backgroundPosition: "center",
+            //     width:"100%",
+            //     height:"600px",
+            //     position:"relative",
+            // }}
         >
 
             {/* Overlay oscuro con opacidad al 10% */}
-            <div className='overlay-img'></div>
+            {/* <div className='overlay-img'></div> */}
 
             <div className='texto-header'>
                 <h1 className='mb-4 text-white'>TUTORIALES</h1>

@@ -116,5 +116,11 @@
         height: 10px;
     }
 }
+
+.btn:hover{
+    background-color: rgb(94, 94, 94) !important;
+    color: rgb(255, 255, 255) !important;
+    transition: .3s;
+}
   
   

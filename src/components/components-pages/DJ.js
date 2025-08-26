@@ -8,18 +8,18 @@ export const DJ = () => {
     <div>
         <header  
             // className='imagen' 
-            style={{ 
-                backgroundImage: `url(${CDJImage})`,
-                backgroundSize: "cover", 
-                backgroundPosition: "center",
-                width:"100%",
-                height:"600px",
-                position:"relative",
-            }}
+            // style={{ 
+            //     backgroundImage: `url(${CDJImage})`,
+            //     backgroundSize: "cover", 
+            //     backgroundPosition: "center",
+            //     width:"100%",
+            //     height:"600px",
+            //     position:"relative",
+            // }}
         >
 
             {/* Overlay oscuro con opacidad al 10% */}
-            <div className='overlay-img'></div>
+            {/* <div className='overlay-img'></div> */}
 
             <div className='texto-header'>
                 <h1 className='mb-4 text-white'>FORMACIÓN EN DJ</h1>
