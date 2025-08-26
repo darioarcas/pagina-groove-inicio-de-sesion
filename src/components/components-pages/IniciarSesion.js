@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { startGoogleLogin } from '../../actions/auth';
+import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
 
 export const IniciarSesion = () => {
 
@@ -18,9 +18,7 @@ export const IniciarSesion = () => {
 
   const handleLogin = (e)=>{
     e.preventDefault();
-    if(email === "correo@correo.com" || email === "academiagroovedj@gmail.com"){
-      // dispatch(startLoginEmailPassword(email, password));
-    }
+    dispatch(startLoginEmailPassword(email, password));
   }
 
   const handleInputChange = (e)=>{
