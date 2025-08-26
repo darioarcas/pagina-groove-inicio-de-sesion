@@ -68,41 +68,48 @@ export const AppRouter = () => {
 
     // Funcion boton para probar un pago desde mercdado pago
     const probarPago = async () => {
-        try {
-            const user = firebase.auth().currentUser;
-            if (!user) {
+        const user = firebase.auth().currentUser;
+        if (!user) {
             alert("Debes estar logueado para probar.");
             return;
-            }
+        }
 
+        // 👇 Abrir una nueva pestaña de inmediato (sin contenido aún)
+        const newTab = window.open('', '_blank');
+
+        try {
             const token = await user.getIdToken();
 
             const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                cursoId: "oCGt5o0drabaZz6az8nC",
-                cursoNombre: "Curso de DJ con CDJ Pioneer Inicial",
-                uid: user.uid,
-            }),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    cursoId: "oCGt5o0drabaZz6az8nC",
+                    cursoNombre: "Curso de DJ con CDJ Pioneer Inicial",
+                    uid: user.uid,
+                }),
             });
 
             const data = await response.json();
             console.log("✅ Preferencia creada:", data);
 
             if (data.init_point) {
-                window.open(data.init_point, "_blank");
+                // 👇 Redirigir la pestaña que ya se abrió
+                newTab.location.href = data.init_point;
             } else {
-            alert("No se generó el link de pago.");
+                newTab.close(); // cerrar si no hay link
+                alert("No se generó el link de pago.");
             }
         } catch (error) {
             console.error("❌ Error al generar link de pago:", error);
+            if (newTab) newTab.close();
             alert("Error al generar link de pago.");
         }
     };
+
 
 
 

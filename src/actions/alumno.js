@@ -2,20 +2,6 @@
 
 
 
-/*
-  // Configuracion de las reglas de la base de datos en firebase
-
-  rules_version = '2';
-
-  service cloud.firestore {
-    match /databases/{database}/documents {
-      match /{document=**} {
-        allow read, write: if request.auth != null;
-      }
-    }
-  }
-
-*/
 
 
 
@@ -45,6 +31,7 @@ export const setearAlumnos = (alumnos)=>{
 
 
 export const cierraFormulario = ()=>{
+
   return{
     type: types.cerrarFormulario
   }
