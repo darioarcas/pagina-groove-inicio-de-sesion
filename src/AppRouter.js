@@ -119,7 +119,7 @@ export const AppRouter = () => {
 
   return (
     <>
-        <BrowserRouter>
+        <BrowserRouter basename='/pagina-groove-inicio-de-sesion'>
 
                 <ScrollToTop/>
 
