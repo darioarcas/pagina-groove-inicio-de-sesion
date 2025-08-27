@@ -1,3 +1,5 @@
+// src/app-router/Menu.js
+
 import { Link } from 'react-router-dom';
 import logo from './LOGO NUEVO.png';
 import { useSelector } from 'react-redux';
@@ -34,20 +36,6 @@ export const Menu = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div className="container-fluid">
 
             
@@ -66,7 +54,7 @@ export const Menu = () => {
                                     <h6>INICIO</h6>
                             </li>
                         </Link>
-                        <Link className="nav-link w-100" to="/dj">
+                        {/* <Link className="nav-link w-100" to="/dj">
                             <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
                                     <h6>DJ</h6>
                             </li>
@@ -75,38 +63,69 @@ export const Menu = () => {
                             <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
                                     <h6>PRODUCCIÓN</h6>
                             </li>
-                        </Link>
-                        <Link className="nav-link w-100" to="/alquiler-sala">
+                        </Link> */}
+                        {/* <Link className="nav-link w-100" to="/tutoriales">
                             <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
-                                    <h6>ALQUILER SALA</h6>
-                            </li>
-                        </Link>
-                        <Link className="nav-link w-100" to="/tutoriales">
-                            <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
-                                    <h6>TUTORIALES</h6>
-                            </li>
-                        </Link>
-                        <Link className="nav-link w-100" to="/iniciar-sesion">
-                            <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
-                                    <h6>
-                                        {   
-                                            //Si el alumno inicio sesion en el navegador se muestra "Perfil" y no "Ingresar"
-                                            Object.keys(auth).length !== 0
-                                            ? "PERFIL" :"INGRESAR"
-                                        }
-                                    </h6>
-                            </li>
-                        </Link>
-                        {/* <Link className="nav-link w-100" to="/que-es-groove">
-                            <li className="nav-item mx-2" data-bs-dismiss="offcanvas" aria-label="Close">
-                                    <h6>Sobre Groove</h6>
-                            </li>
-                        </Link>
-                        <Link className="nav-link w-100" to="/iniciar-sesion">
-                            <li className="nav-item mx-2" data-bs-dismiss="offcanvas" aria-label="Close">
-                                    <h6>Iniciar sesión</h6>
+                            <h6>TUTORIALES</h6>
                             </li>
                         </Link> */}
+
+
+
+
+                    <li className="nav-item mx-2 py-3">
+                        <button 
+                            className="btn text-white w-100 text-start p-0 d-flex flex-row" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#submenuCursos" 
+                            aria-expanded="false" 
+                            aria-controls="submenuCursos"
+                        >
+                            <h6 className="m-0">CURSOS</h6>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" className="bi bi-caret-down my-auto" viewBox="0 0 16 16">
+                                <path d="M3.204 5h9.592L8 10.481 3.204 5z"/>
+                            </svg>
+                        </button>
+
+                        <div className="collapse mt-2" id="submenuCursos">
+                            <ul className="list-unstyled ps-3">
+                            <li className="py-1" data-bs-dismiss="offcanvas">
+                                <Link className="nav-link text-white" to="/dj">DJ</Link>
+                            </li>
+                            <li className="py-1" data-bs-dismiss="offcanvas">
+                                <Link className="nav-link text-white" to="/produccion-musical">PRODUCCIÓN</Link>
+                            </li>
+                            <li className="py-1" data-bs-dismiss="offcanvas">
+                                <Link className="nav-link text-white" to="/tutoriales">TUTORIALES</Link>
+                            </li>
+                            <li className="py-1" data-bs-dismiss="offcanvas">
+                                <Link className="nav-link text-white" to="/videocursos">VIDEOCURSOS ON-DEMAND</Link>
+                            </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <Link className="nav-link w-100" to="/alquiler-sala">
+                        <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <h6>ALQUILER SALA</h6>
+                        </li>
+                    </Link>
+
+
+                    <Link className="nav-link w-100" to="/iniciar-sesion">
+                        <li className="nav-item mx-2 py-3" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <h6>
+                                    {   
+                                        //Si el alumno inicio sesion en el navegador se muestra "Perfil" y no "Ingresar"
+                                        Object.keys(auth).length !== 0
+                                        ? "PERFIL" :"INGRESAR"
+                                    }
+                                </h6>
+                        </li>
+                    </Link>
+
+
                     </ul>
                 </div>
             </div>

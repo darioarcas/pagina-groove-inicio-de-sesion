@@ -1,4 +1,4 @@
-
+/* src/app-router/Menu.css */
 
 
 
@@ -27,8 +27,16 @@
     color: rgb(160, 212, 233);
 }
 
-.offcanvas-body ul{
+/* .offcanvas-body ul{
     display: flex;
     align-items: start;
     justify-content: center;
+} */
+
+
+
+
+.offcanvas-body ul {
+    display: block;
+    padding-left: 0;
 }

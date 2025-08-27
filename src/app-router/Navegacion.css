@@ -4,6 +4,13 @@
 
 
 
+
+
+.texto-barra-navegacion {
+  font-size: 0.9rem;   /* o ajustá a gusto, ej: 0.85rem */
+  font-weight: 400;    /* normal */
+}
+
 .navegacion {
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
