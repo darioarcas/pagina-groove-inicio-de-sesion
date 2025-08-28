@@ -1,6 +1,7 @@
 //src/AppRouter.js
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { firebase } from "./firebase/firebase";
 import { Inicio } from './components/components-pages/Inicio';
 import { DJ } from './components/components-pages/DJ';
@@ -119,7 +120,8 @@ export const AppRouter = () => {
 
   return (
     <>
-        <BrowserRouter basename='/pagina-groove-inicio-de-sesion'>
+        {/* <BrowserRouter> */}
+        <HashRouter>
 
                 <ScrollToTop/>
 
@@ -212,8 +214,8 @@ export const AppRouter = () => {
 
                 <Footer/>
                 
-
-        </BrowserRouter>
+        </HashRouter>
+        {/* </BrowserRouter> */}
     </>
   )
 }
