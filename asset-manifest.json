@@ -1,8 +1,7 @@
 {
   "files": {
     "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.5e1738c9.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.da1ba294.js",
-    "static/media/CDJ-2000Nexus_FRONT.jpg": "/pagina-groove-inicio-de-sesion/static/media/CDJ-2000Nexus_FRONT.cdf7d4ccc01932fbfc4a.jpg",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.32411208.js",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
     "static/media/dj-avanzado-1.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-1.b566acce35a27cbe07ad.JPG",
@@ -36,10 +35,10 @@
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
     "main.5e1738c9.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.5e1738c9.css.map",
-    "main.da1ba294.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.da1ba294.js.map"
+    "main.32411208.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.32411208.js.map"
   },
   "entrypoints": [
     "static/css/main.5e1738c9.css",
-    "static/js/main.da1ba294.js"
+    "static/js/main.32411208.js"
   ]
 }
