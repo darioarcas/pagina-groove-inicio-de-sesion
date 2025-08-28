@@ -25,6 +25,7 @@ import { login, startLogout } from './actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import { PerfilUsuario } from './components/components-pages/PerfilUsuario';
+import { Videocursos } from './components/components-pages/Videocursos';
 import CrearCursosPrivados from './components/helpers/CrearCursosPrivados';
 import CrearCursosPublicos from './components/helpers/CrearCursosPublicos';
 import { PagoExitoso } from './components/components-pages/respuesta-pagos/pagoExitoso';
@@ -147,6 +148,7 @@ export const AppRouter = () => {
                         <Route path="/produccion-musical" element={<ProduccionMusical />} />
                         <Route path="/alquiler-sala" element={<AlquilerEquipos />} />
                         <Route path="/tutoriales" element={<Tutoriales />} />
+                        <Route path="/videocursos" element={<Videocursos />} />
                         <Route path="/que-es-groove" element={<QueEsGroove />} />
                         <Route path="/pago-exitoso" element={<PagoExitoso />} />
                         <Route path="/pago-fallido" element={<PagoFallido />} />

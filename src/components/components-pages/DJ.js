@@ -1,4 +1,4 @@
-import CDJImage from './dj/img/CDJ-2000Nexus_FRONT.jpg';
+// import CDJImage from './dj/img/CDJ-2000Nexus_FRONT.jpg';
 import './dj/DJ.css';
 import { TarjetasCursos } from './dj/TarjetasCursos';
 import { ArrayCursos } from './dj/ArraysCursos';
