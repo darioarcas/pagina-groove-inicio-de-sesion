@@ -65,6 +65,7 @@ export const CursosDinamicos = () => {
                       cursoId: curso.cursoId,
                       cursoNombre: curso.nombre,
                       uid: user.uid,
+                      base_url: window.location.origin, // 👈 esto manda el dominio actual
                   }),
               });
   
