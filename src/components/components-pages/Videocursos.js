@@ -1,9 +1,36 @@
 
+import { useEffect, useState } from 'react';
 import './dj/DJ.css';
-// import { TarjetasCursos } from './dj/TarjetasCursos';
+import { db } from "../../firebase/firebase";
+import { TarjetasCursos } from './dj/TarjetasCursos';
 // import { ArrayCursos } from './dj/ArraysCursos';
 
 export const Videocursos = () => {
+    const [cursosPrivados, setCursosPrivados] = useState([]);
+
+    useEffect(() => {
+        
+        const leerCursosPrivados = async () => {
+            try {
+            const snapshot = await db.collection("cursos_privados").get();
+            const cursosLeidos = snapshot.docs.map(doc => ({
+                cursoId: doc.id,
+                titulo: doc.data().nombre || "",
+                descripcion: doc.data().descripcion || "",
+                img:""
+            }));
+    
+            setCursosPrivados(cursosLeidos);
+            } catch (error) {
+            console.error("❌ Error al leer cursos privados:", error);
+            }
+        };
+
+        leerCursosPrivados();
+    }, []);
+
+
+
   return (
     <div>
         <header>
@@ -18,9 +45,18 @@ export const Videocursos = () => {
         </header>
 
         <body className='pt-5'>
-            {/* <TarjetasCursos ArrayCursos={ArrayCursos} inicio={true}/> */}
-            <h2>Lista de cursos On-Demand...</h2>
+            {cursosPrivados.length === 0 ? (
+                <div className="mx-auto w-100 d-flex justify-content-center">
+                    <div style={{ textAlign: 'center', marginTop: '3rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <h3 style={{ margin: 'auto', padding:"0"}}>CARGANDO CURSOS</h3>
+                        <div className="spinner-border text-white mx-2 my-auto" role="status"></div>
+                    </div>
+                </div>
+            ) : (
+                <TarjetasCursos ArrayCursos={cursosPrivados} onDemand={true} inicio={true} />
+            )}
         </body>
+
     </div>
   )
 }

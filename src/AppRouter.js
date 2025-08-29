@@ -28,6 +28,7 @@ import { PerfilUsuario } from './components/components-pages/PerfilUsuario';
 import { Videocursos } from './components/components-pages/Videocursos';
 import CrearCursosPrivados from './components/helpers/CrearCursosPrivados';
 import CrearCursosPublicos from './components/helpers/CrearCursosPublicos';
+import {CursosDinamicos} from './components/components-pages/videocursos-on-deman/CursosDinamicos';
 import { PagoExitoso } from './components/components-pages/respuesta-pagos/pagoExitoso';
 import { PagoFallido } from './components/components-pages/respuesta-pagos/pagoFallido';
 
@@ -69,48 +70,48 @@ export const AppRouter = () => {
 
 
     // Funcion boton para probar un pago desde mercdado pago
-    const probarPago = async () => {
-        const user = firebase.auth().currentUser;
-        if (!user) {
-            alert("Debes estar logueado para probar.");
-            return;
-        }
+    // const probarPago = async () => {
+    //     const user = firebase.auth().currentUser;
+    //     if (!user) {
+    //         alert("Debes estar logueado para probar.");
+    //         return;
+    //     }
 
-        // 👇 Abrir una nueva pestaña de inmediato (sin contenido aún)
-        const newTab = window.open('', '_blank');
+    //     // 👇 Abrir una nueva pestaña de inmediato (sin contenido aún)
+    //     const newTab = window.open('', '_blank');
 
-        try {
-            const token = await user.getIdToken();
+    //     try {
+    //         const token = await user.getIdToken();
 
-            const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify({
-                    cursoId: "oCGt5o0drabaZz6az8nC",
-                    cursoNombre: "Curso de DJ con CDJ Pioneer Inicial",
-                    uid: user.uid,
-                }),
-            });
+    //         const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //             body: JSON.stringify({
+    //                 cursoId: "oCGt5o0drabaZz6az8nC",
+    //                 cursoNombre: "Curso de DJ con CDJ Pioneer Inicial",
+    //                 uid: user.uid,
+    //             }),
+    //         });
 
-            const data = await response.json();
-            console.log("✅ Preferencia creada:", data);
+    //         const data = await response.json();
+    //         console.log("✅ Preferencia creada:", data);
 
-            if (data.init_point) {
-                // 👇 Redirigir la pestaña que ya se abrió
-                newTab.location.href = data.init_point;
-            } else {
-                newTab.close(); // cerrar si no hay link
-                alert("No se generó el link de pago.");
-            }
-        } catch (error) {
-            console.error("❌ Error al generar link de pago:", error);
-            if (newTab) newTab.close();
-            alert("Error al generar link de pago.");
-        }
-    };
+    //         if (data.init_point) {
+    //             // 👇 Redirigir la pestaña que ya se abrió
+    //             newTab.location.href = data.init_point;
+    //         } else {
+    //             newTab.close(); // cerrar si no hay link
+    //             alert("No se generó el link de pago.");
+    //         }
+    //     } catch (error) {
+    //         console.error("❌ Error al generar link de pago:", error);
+    //         if (newTab) newTab.close();
+    //         alert("Error al generar link de pago.");
+    //     }
+    // };
 
 
 
@@ -152,6 +153,8 @@ export const AppRouter = () => {
                         <Route path="/que-es-groove" element={<QueEsGroove />} />
                         <Route path="/pago-exitoso" element={<PagoExitoso />} />
                         <Route path="/pago-fallido" element={<PagoFallido />} />
+                        <Route path="/videocursos/:slug" element={<CursosDinamicos />} />
+
 
                         {/* Componente Temporal para crear Estructura de cursos en Firebase */}
                         <Route path="/crear-cursos-privados" element={<CrearCursosPrivados />} />
@@ -204,7 +207,7 @@ export const AppRouter = () => {
                     </Routes>
 
 
-                    <button onClick={probarPago}>Probar conexión con backend</button>
+                    {/* <button onClick={probarPago}>Probar conexión con backend</button> */}
                     
                 </div>
 
