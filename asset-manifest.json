@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.0922ed2c.js",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.1ebfb345.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
@@ -37,10 +37,10 @@
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
     "main.de47cf87.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css.map",
-    "main.0922ed2c.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.0922ed2c.js.map"
+    "main.1ebfb345.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.1ebfb345.js.map"
   },
   "entrypoints": [
     "static/css/main.de47cf87.css",
-    "static/js/main.0922ed2c.js"
+    "static/js/main.1ebfb345.js"
   ]
 }
