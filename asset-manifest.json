@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.97a02a2d.js",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.6209fb53.css",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.9c8ed4fd.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
+    "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.ff99dc421509b92720f9.png",
+    "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.76b1cacf4d7f5a8eb30c.png",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
-    "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.787cf9fcaef9f180c8e0.png",
-    "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.df3012c67fc9eb5a4d2b.png",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
     "static/media/dj-avanzado-3.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-3.804e47436fe06f83fc64.JPG",
     "static/media/headerDjTraktor.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerDjTraktor.f5d276377de0ef0878f2.jpg",
@@ -38,11 +38,11 @@
     "static/media/produccion-musical-2.jpg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-2.9089ea7e6e65c47cd28d.jpg",
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.de47cf87.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css.map",
-    "main.97a02a2d.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.97a02a2d.js.map"
+    "main.6209fb53.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.6209fb53.css.map",
+    "main.9c8ed4fd.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.9c8ed4fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.de47cf87.css",
-    "static/js/main.97a02a2d.js"
+    "static/css/main.6209fb53.css",
+    "static/js/main.9c8ed4fd.js"
   ]
 }
