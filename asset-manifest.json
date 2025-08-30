@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.11dedc3a.css",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.f75b4b77.css",
     "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.20a2a3e5.js",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
@@ -34,11 +34,11 @@
     "static/media/produccion-musical-2.jpg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-2.9089ea7e6e65c47cd28d.jpg",
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.11dedc3a.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.11dedc3a.css.map",
+    "main.f75b4b77.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.f75b4b77.css.map",
     "main.20a2a3e5.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.20a2a3e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.11dedc3a.css",
+    "static/css/main.f75b4b77.css",
     "static/js/main.20a2a3e5.js"
   ]
 }
