@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.0c980245.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.9a707d13.js",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.a208aa0c.css",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.b5a31503.js",
+    "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
     "static/media/dj-avanzado-1.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-1.b566acce35a27cbe07ad.JPG",
@@ -23,6 +24,7 @@
     "static/media/headerProduccionInicial.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerProduccionInicial.93de7f61036bf295b554.jpg",
     "static/media/headerDjCdj2.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerDjCdj2.3ccde2e1c0e638546be9.jpg",
     "static/media/headerMixingMasteing.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerMixingMasteing.e653b4496d459d06319f.jpg",
+    "static/media/imgHeader.webp": "/pagina-groove-inicio-de-sesion/static/media/imgHeader.27e96abe20f3bb33976c.webp",
     "static/media/produccion-musical-avanzada-1.jpeg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-avanzada-1.ababdb0b02ed590ed96b.jpeg",
     "static/media/dj-urbano.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-urbano.19c1f081c972a8235597.jpg",
     "static/media/dj-traktor.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-traktor.f998a636281ee39a96b7.jpg",
@@ -34,11 +36,11 @@
     "static/media/produccion-musical-2.jpg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-2.9089ea7e6e65c47cd28d.jpg",
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.0c980245.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.0c980245.css.map",
-    "main.9a707d13.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.9a707d13.js.map"
+    "main.a208aa0c.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.a208aa0c.css.map",
+    "main.b5a31503.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.b5a31503.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c980245.css",
-    "static/js/main.9a707d13.js"
+    "static/css/main.a208aa0c.css",
+    "static/js/main.b5a31503.js"
   ]
 }
