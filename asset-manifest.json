@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.5e1738c9.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.edb7be6a.js",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.a4a6b838.css",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.562f839f.js",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
     "static/media/dj-avanzado-1.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-1.b566acce35a27cbe07ad.JPG",
@@ -34,11 +34,11 @@
     "static/media/produccion-musical-2.jpg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-2.9089ea7e6e65c47cd28d.jpg",
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.5e1738c9.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.5e1738c9.css.map",
-    "main.edb7be6a.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.edb7be6a.js.map"
+    "main.a4a6b838.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.a4a6b838.css.map",
+    "main.562f839f.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.562f839f.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e1738c9.css",
-    "static/js/main.edb7be6a.js"
+    "static/css/main.a4a6b838.css",
+    "static/js/main.562f839f.js"
   ]
 }
