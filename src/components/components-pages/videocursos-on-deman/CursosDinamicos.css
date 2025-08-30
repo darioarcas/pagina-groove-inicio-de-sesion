@@ -1,0 +1,105 @@
+/* Fondo con círculos flotantes y desenfocados */
+.background-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.background-circles::before,
+.background-circles::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(116, 175, 238, 0.986), transparent 70%);
+  filter: blur(200px);
+  animation: float 15s infinite alternate ease-in-out;
+}
+
+.background-circles::before {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 15%;
+}
+
+.background-circles::after {
+  width: 300px;
+  height: 300px;
+  bottom: 10%;
+  right: 20%;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, -30px);
+  }
+}
+
+/* Capa transparente con desenfoque para efecto glassmorphism */
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Ajusta la opacidad si querés más o menos */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
+  border-radius: 0.5rem;
+}
+
+/* Estilos header para que la capa se posicione bien */
+header.position-relative {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Texto del header */
+.texto-header {
+  position: relative;
+  background: rgba(141, 141, 141, 0.001); /* Fondo blanco transparente */
+  backdrop-filter: blur(10px); /* Desenfoque */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  color: white; /* Letras blancas */
+}
+
+
+/* Títulos header (puedes ajustar según tus clases existentes) */
+.texto-xxl {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.fw-normal {
+  font-weight: normal;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Para que la app-wrapper tenga relative y controle z-index */
+.app-wrapper.position-relative {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.app-wrapper {
+  background-color: #000; /* Fondo negro sólido */
+  position: relative;     /* Para posicionar hijos relativos */
+  min-height: 100vh;      /* Para que ocupe toda la pantalla */
+  overflow: hidden;       /* Evitar scroll por movimientos de círculos */
+}

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { db, firebase } from "../../../firebase/firebase";
 import { convertirASlug } from "../../helpers/convertirASlug";
 import TituloDesplegable from "../curso/titulo-desplegable/TituloDesplegable";
-import "./CursosDinamicos.css";
 
 export const CursosDinamicos = () => {
   const { slug } = useParams();
@@ -103,37 +102,34 @@ export const CursosDinamicos = () => {
 
   if (!curso) return <h3 className="text-center my-5 py-5">❌ Curso no encontrado</h3>;
 
-
-
-
-
-
-
-
-
-
-
   return (
-    <div className="app-wrapper position-relative">
-        {/* Fondo con círculos */}
-        <div className="background-circles position-fixed w-100 h-100 top-0 start-0 z-n1"></div>
-        {/* Contenido principal */}
-        <div className="content position-relative">
-            <header className="position-relative" style={{ height: "300px", width: "100%" }}>
+        <div>
+            <header
+                className='animate__animated animate__fadeIn animate__faster'
+                style={{ 
+                    backgroundImage: `url(${curso.imgHeader})`,
+                    backgroundSize: "cover", 
+                    backgroundPosition: "center",
+                    width:"100%",
+                    height:"300px",
+                    // height:"900px",
+                    position:"relative",
+                }}
+            >
 
-                {/* Capa transparente que desenfoca lo de atrás */}
-                <div className="blur-overlay"></div>
+                {/* Overlay oscuro con opacidad al 10% */}
+                <div className='overlay-img'></div>
 
-                {/* Contenido encima */}
-                <div className="texto-header w-100 text-center text-white d-flex flex-column justify-content-center align-items-center h-100">
-                    <h1 className="mb-4 texto-xxl">{curso.nombre}</h1>
-                    <h1 className="fw-normal mt-4 fs-6">{curso.descripcion}</h1>
+
+                <div className='texto-header w-100'>
+
+                    <h1 className='mb-4 texto-xxl text-white'>{curso.nombre}</h1>
+
+                    <h1 className='fw-normal mt-4 fs-6'>{curso.descipcion}</h1>
                 </div>
             </header>
 
-
-
-            <main>
+            <body>
                 {/* <section className="contenedor-body"> */}
                     <section className="contenedor-body">
                         <h1 className="titulo-body text-uppercase">{curso.nombre}</h1>
@@ -174,9 +170,7 @@ export const CursosDinamicos = () => {
                             COMPRAR CURSO
                         </button>
                     </div>
-            </main>
+            </body>
         </div>
-
-        </div>
-    );                      
+  );
 };
