@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.1ebfb345.js",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.486c5507.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
     "static/media/dj-avanzado-2.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-2.5162af0183399c70cc8e.JPG",
-    "static/media/dj-avanzado-1.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-1.b566acce35a27cbe07ad.JPG",
     "static/media/dj-avanzado-3.JPG": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-3.804e47436fe06f83fc64.JPG",
     "static/media/headerDjTraktor.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerDjTraktor.f5d276377de0ef0878f2.jpg",
     "static/media/headerDjCdj.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerDjCdj.8e487c9174955302ef76.jpg",
@@ -17,6 +16,7 @@
     "static/media/headerDjVinilos.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerDjVinilos.b47998a7dfb93608d89e.jpg",
     "static/media/headerProduccionAvanzada.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerProduccionAvanzada.a769295f7e61624933fa.jpg",
     "static/media/9.jpg": "/pagina-groove-inicio-de-sesion/static/media/9.100c7325363d7417af31.jpg",
+    "static/media/dj-avanzado-1.png": "/pagina-groove-inicio-de-sesion/static/media/dj-avanzado-1.ea83a714f222c2ba7260.png",
     "static/media/7.jpg": "/pagina-groove-inicio-de-sesion/static/media/7.665457bbbd4b797d691f.jpg",
     "static/media/headerTutoriales.jpg": "/pagina-groove-inicio-de-sesion/static/media/headerTutoriales.13a9f1b762a396a8b465.jpg",
     "static/media/03.jpg": "/pagina-groove-inicio-de-sesion/static/media/03.8e03607dd81feedf5c81.jpg",
@@ -37,10 +37,10 @@
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
     "main.de47cf87.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.de47cf87.css.map",
-    "main.1ebfb345.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.1ebfb345.js.map"
+    "main.486c5507.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.486c5507.js.map"
   },
   "entrypoints": [
     "static/css/main.de47cf87.css",
-    "static/js/main.1ebfb345.js"
+    "static/js/main.486c5507.js"
   ]
 }
