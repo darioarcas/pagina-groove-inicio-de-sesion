@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.23b1a2b4.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.46db1b45.js",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.7455218c.css",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.55e9b266.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.ff99dc421509b92720f9.png",
     "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.76b1cacf4d7f5a8eb30c.png",
@@ -39,11 +39,11 @@
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.webp": "/pagina-groove-inicio-de-sesion/static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.2e1f14b0b48637580309.webp",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.23b1a2b4.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.23b1a2b4.css.map",
-    "main.46db1b45.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.46db1b45.js.map"
+    "main.7455218c.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.7455218c.css.map",
+    "main.55e9b266.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.55e9b266.js.map"
   },
   "entrypoints": [
-    "static/css/main.23b1a2b4.css",
-    "static/js/main.46db1b45.js"
+    "static/css/main.7455218c.css",
+    "static/js/main.55e9b266.js"
   ]
 }
