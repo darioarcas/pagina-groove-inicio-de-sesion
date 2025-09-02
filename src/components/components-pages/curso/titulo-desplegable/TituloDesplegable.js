@@ -9,12 +9,12 @@ const TituloDesplegable = ({informacion, alquiler=0}) => {
   };
 
   return (
-    <div className="contenedor" onClick={toggleDescripcion}>
+    <div className="contenedor card transparent p-0" onClick={toggleDescripcion}>
 
       { // Si NO fue llamado por Alquileres
         !alquiler ?
         <>
-          <h2  className="titulo text-uppercase">
+          <h2  className="titulo py-2" style={{paddingLeft:"10px"}}>
             {informacion.titulo}
           </h2>
           <div className={`descripcion ${isVisible ? 'visible' : ''}`}>

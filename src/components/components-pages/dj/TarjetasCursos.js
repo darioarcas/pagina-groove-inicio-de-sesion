@@ -118,7 +118,7 @@ export const TarjetasCursos = ({ArrayCursos, youtube=false, inicio=false, onDema
                   </Link>
                   <div className={`card-body tarjeta`}>
                     <h5 className="card-title fs-5 fw-bold text-uppercase">{curso.titulo}</h5>
-                    <p className="card-text fs-6 fw-bold opacity-50"><small className="text-body-secondary">{curso.descipcion}</small></p>
+                    <p className="card-text fs-6 fw-bold opacity-50"><small className="text-body-secondary">{curso.descripcion}</small></p>
                   </div>
 
                   <div className="card-body d-flex justify-content-between">

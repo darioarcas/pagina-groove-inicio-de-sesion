@@ -1,5 +1,5 @@
 import djCdj from "./img/galeria-dj-cdj/dj-cdj-1.jpg";
-import djAvanzado from "./img/galeria-dj-avanzado/dj-avanzado-1.JPG";
+import djAvanzado from "./img/galeria-dj-avanzado/dj-avanzado-1.png";
 import djAvanzado2 from "./img/galeria-dj-avanzado/dj-avanzado-2.JPG";
 import djTraktor from "./img/galeria-dj-traktor/dj-traktor.jpg";
 import djVinilos from "./img/galeria-dj-con-vinilos/dj-vinilos.jpeg";

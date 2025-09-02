@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db, firebase } from "../../../firebase/firebase";
 import { convertirASlug } from "../../helpers/convertirASlug";
 import TituloDesplegable from "../curso/titulo-desplegable/TituloDesplegable";
 import "./CursosDinamicos.css";
+import "../dj/DJ.css";
+import { ArrayCursos } from '../dj/ArraysCursosOnDemand';
 
 export const CursosDinamicos = () => {
   const { slug } = useParams();
@@ -12,7 +14,17 @@ export const CursosDinamicos = () => {
 //   const mensaje = "Hola,%20quisiera%20saber%20si%20hay%20cupos%20disponibles%20para";  // Mensaje predefinido codificado
 //   const numero = "5493513417537";
 
+// console.log("🔍 Slug obtenido de la URL:", slug);
+
+
   useEffect(() => {
+
+    const cursoEncontrado = ArrayCursos.find( cursos => cursos.id === slug);
+    console.log("🔍 Curso encontrado en ArrayCursos:", cursoEncontrado);
+    setCurso(cursoEncontrado);
+
+
+
     const obtenerCurso = async () => {
       try {
         const snapshot = await db.collection("cursos_publicos").get();
@@ -24,7 +36,7 @@ export const CursosDinamicos = () => {
         const cursoEncontrado = cursos.find(c => convertirASlug(c.nombre) === slug);
 
         if (cursoEncontrado) {
-          setCurso(cursoEncontrado);
+        //   setCurso(cursoEncontrado);
         }
 
         setCargando(false);
@@ -39,7 +51,7 @@ export const CursosDinamicos = () => {
 
 
   const base_url = window.location.origin; // Obtener el dominio actual
-//   console.log("🌐 Dominio actual:", base_url);
+  console.log("🌐 Dominio actual:", base_url);
 
 
   // Funcion boton para probar un pago desde mercdado pago
@@ -91,91 +103,162 @@ export const CursosDinamicos = () => {
 
 
 
+    // Hook para detectar cambios en el tamaño de la ventana
+    const [width2, setWidth] = useState(window.innerWidth);
+
+    // Actualizar el ancho cuando la ventana cambia de tamaño
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Función para obtener los estilos dinámicos
+    const dynamicHeight = ()=> {
+        const width = width2;
+
+        const style = {
+            height: width < 490 ? "500px" : "300px",
+            // maxHeight: "800px",
+            width: "100%",
+            // position: "relative"
+        };
+
+        return style;
+    }
+
+
+    const img2 = () => {
+        if(curso?.img2){
+            return <img className="mx-auto d-block w-25" style={{position: "relative", top:120}} src={curso?.img2} alt="imagen del curso"/>
+        }
+        return null;
+    }
+
+
+
+
+    const img3 = () => {
+        if(curso?.imgSecundaria){
+            return <img className="mx-auto my-5 d-block w-50" src={curso?.imgSecundaria} alt="imagen del curso"/>
+        }
+        return null;
+    }
 
 
 
 
 
-  if (cargando) return <div className="d-flex justify-content-center align-items-center flex-row">
-    <h3 className="text-center my-5 py-5">Cargando curso</h3>
-    <div className="spinner-border text-white mx-2 my-auto" role="status"></div>
-  </div>
-
-  if (!curso) return <h3 className="text-center my-5 py-5">❌ Curso no encontrado</h3>;
 
 
 
+//   if (cargando) return <div className="d-flex justify-content-center align-items-center flex-row">
+//     <h3 className="text-center my-5 py-5">Cargando curso</h3>
+//     <div className="spinner-border text-white mx-2 my-auto" role="status"></div>
+//   </div>
 
-
+//   if (!curso) return <h3 className="text-center my-5 py-5">❌ Curso no encontrado</h3>;
 
 
 
 
 
 
-  return (
-    <div className="app-wrapper position-relative">
-        {/* Fondo con círculos */}
-        <div className="background-circles position-fixed w-100 h-100 top-0 start-0 z-n1"></div>
-        {/* Contenido principal */}
-        <div className="content position-relative">
-            <header className="position-relative" style={{ height: "300px", width: "100%" }}>
-
-                {/* Capa transparente que desenfoca lo de atrás */}
-                <div className="blur-overlay"></div>
-
-                {/* Contenido encima */}
-                <div className="texto-header w-100 text-center text-white d-flex flex-column justify-content-center align-items-center h-100">
-                    <h1 className="mb-4 texto-xxl">{curso.nombre}</h1>
-                    <h1 className="fw-normal mt-4 fs-6">{curso.descripcion}</h1>
-                </div>
-            </header>
 
 
 
-            <main>
-                {/* <section className="contenedor-body"> */}
-                    <section className="contenedor-body">
-                        <h1 className="titulo-body text-uppercase">{curso.nombre}</h1>
-                        <ul>
-                            {curso.temario.map((temario, index) =>{
-                                // return <li>{item}</li>
-                                return <li><TituloDesplegable informacion={temario} /></li>
+
+
+    return (
+        <div className="app-wrapper position-relative">
+            
+            {/* Fondo con círculos animados */}
+            <div className="background-gradient position-fixed w-100 h-100 top-0 start-0 z-n1"></div>
+
+            {/* Contenido principal */}
+            <div className="content position-relative">
+                <header 
+                    className="position-relative" 
+                    // style={dynamicHeight()}
+                    style={{
+                        width: "100%",
+                        height: "300px",
+                        position: "relative",
+                    }}
+                >
+                    {/* Imagen de fondo en Header */}
+                    <div
+                        className="background-img"
+                        style={{backgroundImage: `url(${curso?.imgHeader})`}}
+                    >
+                    </div>
+                    {/* Overlay oscuro con opacidad al 10% */}
+                    <div className='overlay-img'></div>
+                    {/* Capa transparente que desenfoca lo de atrás */}
+                    {/* <div className="blur-overlay"></div> */}
+
+                    {/* Contenido encima */}
+                    <div className="texto-header w-100 text-center text-white d-flex flex-column justify-content-center align-items-center h-100">
+                        <h1 className="mb-4 texto-xxl">{curso?.titulo}</h1>
+                        <h1 className="fw-normal mt-4 fs-6">{curso?.descripcion}</h1>
+                    </div>
+                </header>
+
+
+
+                <main>
+                    {img3()}
+                    {img2()}
+                    {
+                        curso?.img &&
+                        <img className="mx-auto d-block mt-5 pt-3 mb-4 w-75" src={curso?.img} alt="imagen del curso"/>
+
+                    }
+                    {/* <section className="contenedor-body"> */}
+                        <section className="contenedor-body">
+                            <h1 className="titulo-body text-center">{curso?.tituloBody}</h1>
+                            <ul key={curso?.id}>
+                                {curso?.informacionCurso?.map((temario, index) =>{
+                                    // return <li>{item}</li>
+                                    return <li><TituloDesplegable informacion={temario} /></li>
+                                })}
+                            </ul>
+                        </section>
+
+                        {/* <img className="imagen-secundaria rounded" src={curso?.imgSecundaria} alt="imagen del curso?"/> */}
+
+                    {/* </section> */}
+
+                    <section className="contenedor-temario">
+                        <h1 className="titulo-body fs-6 w-100 text-center">{curso?.modalidadYTurnos[0].titulo}</h1>
+                        <ul style={{textShadow: "0px 0px 3px rgba(0, 0, 0, 1)"}}>
+                            {curso?.modalidadYTurnos[0].items.map((item, index) =>{
+                                if( item.trim() === "" ){
+                                    return null; // Omitir elementos vacíos
+                                }
+                                return <li>{item}</li>
                             })}
                         </ul>
                     </section>
+                    <section className="contenedor-body">
+                        {/* <p className="fw-bold mb-0 mt-2">{modulo.descripcion}</p>
+                        <p className="fw-semibold mt-0 p-0 text-secondary">{modulo.descripcion}</p> */}
+                        {/* <p className="fw-bold mb-0 mt-2">{curso?.modalidadYTurnos[0].turnos[0] && curso?.modalidadYTurnos[0].turnos[0].titulo}</p>
+                        <p className="fw-semibold mt-0 p-0 text-secondary">{curso?.modalidadYTurnos[0].turnos[0] && curso?.modalidadYTurnos[0].turnos[0].descripcion}</p> */}
+                    </section>
 
-                    {/* <img className="imagen-secundaria rounded" src={curso.imgSecundaria} alt="imagen del curso"/> */}
-
-                {/* </section> */}
-
-                <section className="contenedor-temario">
-                    <h1 className="titulo-body w-100">Temario</h1>
-                    <ul>
-                        {curso.temario.map((modulo, index) =>{
-                            return <li>{modulo.titulo}</li>
-                        })}
-                    </ul>
-                </section>
-                <section className="contenedor-body">
-                    <p className="fw-bold mb-0 mt-2">{curso.nombre}</p>
-                    <p className="fw-semibold mt-0 p-0 text-secondary">{curso.descripcion}</p>
-                    {/* <p className="fw-bold mb-0 mt-2">{curso.modalidadYTurnos[0].turnos[0] && curso.modalidadYTurnos[0].turnos[0].titulo}</p>
-                    <p className="fw-semibold mt-0 p-0 text-secondary">{curso.modalidadYTurnos[0].turnos[0] && curso.modalidadYTurnos[0].turnos[0].descripcion}</p> */}
-                </section>
-
-                    
-                    
-                    <div className="contenido-header mb-5">
-                        <button 
-                            className="btn btn-light"
-                            onClick={probarPago}
-                        >
-                            COMPRAR CURSO
-                        </button>
-                    </div>
-            </main>
-        </div>
+                        
+                        
+                        <div className="contenido-header mb-5">
+                            <button 
+                                className="btn btn-light"
+                                onClick={probarPago}
+                            >
+                                COMPRAR CURSO
+                            </button>
+                        </div>
+                </main>
+            </div>
 
         </div>
     );                      

@@ -4,7 +4,7 @@ import img2 from '../dj/img/11.jpg';
 import img3 from '../dj/img/9.jpg';
 import img4 from '../dj/img/8.jpg';
 import img5 from '../dj/img/7.jpg';
-import img6 from '../dj/img/galeria-dj-avanzado/dj-avanzado-1.JPG';
+import img6 from '../dj/img/galeria-dj-avanzado/dj-avanzado-1.png';
 import img7 from '../dj/img/galeria-dj-avanzado/dj-avanzado-3.JPG';
 
 

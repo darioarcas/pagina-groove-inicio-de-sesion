@@ -1,61 +1,28 @@
-/* Fondo con círculos flotantes y desenfocados */
-.background-circles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
+
+
+/* ICONO DE PLAY ONDEMAND */
+.icon-play {
+  color: white; /* o el color que prefieras */
 }
 
-.background-circles::before,
-.background-circles::after {
-  content: '';
-  position: absolute;
+.glass-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 40%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(116, 175, 238, 0.986), transparent 70%);
-  filter: blur(200px);
-  animation: float 15s infinite alternate ease-in-out;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.background-circles::before {
-  width: 400px;
-  height: 400px;
-  top: 10%;
-  left: 15%;
-}
 
-.background-circles::after {
-  width: 300px;
-  height: 300px;
-  bottom: 10%;
-  right: 20%;
-}
 
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(30px, -30px);
-  }
-}
 
-/* Capa transparente con desenfoque para efecto glassmorphism */
-.blur-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1); /* Ajusta la opacidad si querés más o menos */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 0;
-  border-radius: 0.5rem;
-}
 
 /* Estilos header para que la capa se posicione bien */
 header.position-relative {
@@ -67,16 +34,15 @@ header.position-relative {
 /* Texto del header */
 .texto-header {
   position: relative;
-  background: rgba(141, 141, 141, 0.001); /* Fondo blanco transparente */
-  backdrop-filter: blur(10px); /* Desenfoque */
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(141, 141, 141, 0.001);
+  backdrop-filter: blur(5px);
+  /* -webkit-backdrop-filter: blur(10px); */
   border-radius: 12px;
   padding: 1.5rem 2rem;
-  color: white; /* Letras blancas */
+  color: white;
 }
 
-
-/* Títulos header (puedes ajustar según tus clases existentes) */
+/* Títulos header */
 .texto-xxl {
   font-size: 3rem;
   font-weight: bold;
@@ -95,11 +61,116 @@ header.position-relative {
   z-index: 1;
 }
 
-
-
 .app-wrapper {
-  background-color: #000; /* Fondo negro sólido */
-  position: relative;     /* Para posicionar hijos relativos */
-  min-height: 100vh;      /* Para que ocupe toda la pantalla */
-  overflow: hidden;       /* Evitar scroll por movimientos de círculos */
+  background-color: #000;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
+
+
+
+
+
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  z-index: -1;
+  pointer-events: none;
+  background: 
+              radial-gradient(circle at 93% 30%, #888888d8, transparent 32%), /* Luz arriba a la derecha */
+              radial-gradient(circle at 0% 5%, #7c7c7c, transparent 20%),/* Luz arriba a la izquierda */
+              radial-gradient(circle at 100% 130%, #ffffff, transparent 35%), /* Luz abajo a la derecha */
+              radial-gradient(circle at 7% 70%, #929292, transparent 30%); /* Luz abajo a la izquierda */
+              /* radial-gradient(circle at 0% 30%, #000000, transparent 30%); */
+  animation: moveGradient 4s infinite alternate ease-in-out;
+  background-size: 200% 400%;
+  /*filter: blur(80px);  Si querés efecto de profundidad */
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
+
+
+
+
+/* VIDEOS DE YOUTUBE */
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  border: none;
+}
+
+/* Opcional: bloquear clic derecho */
+.video-wrapper iframe {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.video-wrapper {
+  -webkit-touch-callout: none;
+}
+/* .ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-Wrql6b-SmKAyb {
+  pointer-events: none;
+}
+.ndfHFb-c4YZDc-Wrql6b-AeOLfc-b0t70b{
+  pointer-events: none;
+} */
+
+
+
+/* 
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(135deg, #74afee, #4e7bb5, #2e3f80);
+  background-size: 600% 600%;
+  animation: gradientShift 30s ease infinite;
+} */
+
+/* @keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */

@@ -166,43 +166,31 @@ export const logout = ()=>{
 
 
 
-// Acción que escucha en tiempo real los cursos comprados y despacha al store
-export const startUserCoursesListener = (uid) => {
-    return (dispatch) => {
-        const userRef = db.collection("users").doc(uid);
-        
-        const unsubscribe = userRef.onSnapshot(async (doc) => {
-            if (doc.exists) {
-                const data = doc.data();
-                const cursoIds = data.cursosComprados || [];
-                
-            // Obtener los nombres de los cursos desde cursos_privados
-            const cursoPromises = cursoIds.map(async (cursoId) => {
-                const cursoSnap = await db.collection("cursos_privados").doc(cursoId).get();
-          if (cursoSnap.exists) {
-            const cursoData = cursoSnap.data();
-            return {
-              id: cursoId,
-              nombre: cursoData.nombre || "Curso sin nombre",
-            };
-          } else {
-              return { id: cursoId, nombre: "Curso no encontrado" };
-            }
-        });
 
-        const cursos = await Promise.all(cursoPromises);
-        
-        dispatch({
-            type: types.userCoursesUpdated, // 👈 este es el nuevo tipo
-            payload: cursos, // cursos con nombre + id
-        });
-    }
+// Acción para obtener los cursos del usuario una sola vez (no en tiempo real)
+export const fetchUserCoursesOnce = (uid) => async (dispatch) => {
+  const userDoc = await db.collection("users").doc(uid).get();
+
+  if (userDoc.exists) {
+    const data = userDoc.data();
+    const cursoIds = data.cursosComprados || [];
+
+    const cursoPromises = cursoIds.map(async (cursoId) => {
+      const cursoSnap = await db.collection("cursos_privados").doc(cursoId).get();
+      return cursoSnap.exists
+        ? { id: cursoId, nombre: cursoSnap.data().nombre || "Curso sin nombre" }
+        : { id: cursoId, nombre: "Curso no encontrado" };
     });
-    
-    // Es buena práctica devolver el unsubscribe por si querés cancelarlo
-    return unsubscribe;
+
+    const cursos = await Promise.all(cursoPromises);
+
+    dispatch({
+      type: types.userCoursesUpdated,
+      payload: cursos,
+    });
+  }
 };
-};
+
 
 
 
