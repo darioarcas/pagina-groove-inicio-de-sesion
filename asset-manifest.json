@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.77ef45cf.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.e4a1dd46.js",
+    "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.f26d061e.css",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.48d8e577.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.ff99dc421509b92720f9.png",
     "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.76b1cacf4d7f5a8eb30c.png",
@@ -31,6 +31,7 @@
     "static/media/produccion-musical-avanzada-1.jpeg": "/pagina-groove-inicio-de-sesion/static/media/produccion-musical-avanzada-1.ababdb0b02ed590ed96b.jpeg",
     "static/media/dj-urbano.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-urbano.19c1f081c972a8235597.jpg",
     "static/media/dj-traktor.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-traktor.f998a636281ee39a96b7.jpg",
+    "static/media/mercadopago.png": "/pagina-groove-inicio-de-sesion/static/media/mercadopago.7a4702705cda5aa7cc82.png",
     "static/media/mixing-mastering-1.avif": "/pagina-groove-inicio-de-sesion/static/media/mixing-mastering-1.ccf15890146478c46ac2.avif",
     "static/media/dj-vinilos.jpeg": "/pagina-groove-inicio-de-sesion/static/media/dj-vinilos.91e575aa20acd8ef7ce4.jpeg",
     "static/media/logo-groove.jpg": "/pagina-groove-inicio-de-sesion/static/media/logo-groove.c8adc33b162cdd9a5124.jpg",
@@ -40,11 +41,11 @@
     "static/media/LOGO NUEVO.png": "/pagina-groove-inicio-de-sesion/static/media/LOGO NUEVO.8b0b479f45b478e1ad6c.png",
     "static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.webp": "/pagina-groove-inicio-de-sesion/static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.2e1f14b0b48637580309.webp",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
-    "main.77ef45cf.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.77ef45cf.css.map",
-    "main.e4a1dd46.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.e4a1dd46.js.map"
+    "main.f26d061e.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.f26d061e.css.map",
+    "main.48d8e577.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.48d8e577.js.map"
   },
   "entrypoints": [
-    "static/css/main.77ef45cf.css",
-    "static/js/main.e4a1dd46.js"
+    "static/css/main.f26d061e.css",
+    "static/js/main.48d8e577.js"
   ]
 }
