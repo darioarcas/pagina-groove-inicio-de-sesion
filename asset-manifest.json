@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.f26d061e.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.c6a02b7a.js",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.eb48f541.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.ff99dc421509b92720f9.png",
     "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.76b1cacf4d7f5a8eb30c.png",
@@ -42,10 +42,10 @@
     "static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.webp": "/pagina-groove-inicio-de-sesion/static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.2e1f14b0b48637580309.webp",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
     "main.f26d061e.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.f26d061e.css.map",
-    "main.c6a02b7a.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.c6a02b7a.js.map"
+    "main.eb48f541.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.eb48f541.js.map"
   },
   "entrypoints": [
     "static/css/main.f26d061e.css",
-    "static/js/main.c6a02b7a.js"
+    "static/js/main.eb48f541.js"
   ]
 }
