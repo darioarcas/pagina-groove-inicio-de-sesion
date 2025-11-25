@@ -7,34 +7,40 @@ import { ArrayProduccionMusical as ArrayCursos } from './produccion-musical/Arra
 
 export const ProduccionMusical = () => {
   return (
-    <div>
-      <header  
-            // className='imagen' 
-            // style={{ 
-            //     backgroundImage: `url(${ProduccionImage})`,
-            //     backgroundSize: "cover", 
-            //     backgroundPosition: "center",
-            //     width:"100%",
-            //     height:"600px",
-            //     position:"relative",
-            // }}
-        >
+    <div className="app-wrapper position-relative">
 
-            {/* Overlay oscuro con opacidad al 10% */}
-            {/* <div className='overlay-img'></div> */}
+        {/* Fondo con círculos animados */}
+        <div className="background-gradient position-fixed w-100 h-100 top-0 start-0 z-n1"></div>
 
-            <div className='texto-header'>
-                <h1 className='mb-4 text-white'>FORMACIÓN EN PRODUCCIÓN MUSICAL</h1>
-                <h6 className='fw-normal fs-6'>
-                Ofrecemos una formación integral con cursos especializados en producción electrónica, producción urbana, teoría musical, mixing y mastering. Aprende a crear, mezclar y masterizar tus propios tracks con el acompañamiento de profesionales del sector, adquiriendo las habilidades necesarias para destacar en la industria musical.
+        <div className="content position-relative">
+          <header  
+                // className='imagen' 
+                // style={{ 
+                //     backgroundImage: `url(${ProduccionImage})`,
+                //     backgroundSize: "cover", 
+                //     backgroundPosition: "center",
+                //     width:"100%",
+                //     height:"600px",
+                //     position:"relative",
+                // }}
+            >
 
-                </h6>
-            </div>
-        </header>
+                {/* Overlay oscuro con opacidad al 10% */}
+                {/* <div className='overlay-img'></div> */}
 
-        <body className='pt-5'>
-            <TarjetasCursos ArrayCursos={ArrayCursos} inicio={true}/>
-        </body>
+                <div className='texto-header'>
+                    <h1 className='mb-4 text-white'>FORMACIÓN EN PRODUCCIÓN MUSICAL</h1>
+                    <h6 className='fw-normal fs-6'>
+                    Ofrecemos una formación integral con cursos especializados en producción electrónica, producción urbana, teoría musical, mixing y mastering. Aprende a crear, mezclar y masterizar tus propios tracks con el acompañamiento de profesionales del sector, adquiriendo las habilidades necesarias para destacar en la industria musical.
+
+                    </h6>
+                </div>
+            </header>
+
+            <main className='pt-5'>
+                <TarjetasCursos ArrayCursos={ArrayCursos} inicio={true}/>
+            </main>
+        </div>
     </div>
   )
 }

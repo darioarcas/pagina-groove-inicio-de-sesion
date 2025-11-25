@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import ChevronDown from "./ChevronDown";
 
 const DropdownUsuario = ({ auth, handleLogout2 }) => {
   const [open, setOpen] = useState(false);
@@ -16,12 +17,14 @@ const DropdownUsuario = ({ auth, handleLogout2 }) => {
   }, []);
 
   return (
-    <div className="dropdown-react" ref={menuRef} style={{ position: "relative", listStyle: "none" }}>
+    <div onClick={() => setOpen(!open)} className="dropdown-react" ref={menuRef} style={{ position: "relative", listStyle: "none" }}>
       <button
-        className="text-white bg-transparent border-0"
-        onClick={() => setOpen(!open)}
+        className="text-white bg-transparent border-0 accordion"
+        
       >
-        {auth.name} ⌄
+        {auth.name}
+        {/* FLECHA APUNTANDO HACIA ABAJO DROPDOWN */}
+        <ChevronDown />
       </button>
 
       {open && (
@@ -33,17 +36,26 @@ const DropdownUsuario = ({ auth, handleLogout2 }) => {
             left: 0,
             marginTop: "8px",
             padding: "10px",
-            background: "#222",
+            background: "rgba(105, 105, 105, 0.15)",
+            backdropFilter: "blur(1px)",
+            WebkitBackdropFilter: "blur(1px)",
             borderRadius: "8px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-            zIndex: 9999,
+            boxShadow: "0 0px 20px rgba(0, 0, 0, 1)",
+            zIndex: 20,
           }}
         >
+          <li style={{ listStyle: "none" }}>
+            <button onClick={()=>{return null}} className="btn btn-sm text-white">
+              Configuración
+            </button>
+          </li>
+
           <li style={{ listStyle: "none" }}>
             <button onClick={handleLogout2} className="btn btn-sm text-white">
               Cerrar sesión
             </button>
           </li>
+
         </ul>
       )}
     </div>

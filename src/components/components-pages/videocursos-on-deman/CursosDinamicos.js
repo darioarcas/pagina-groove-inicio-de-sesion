@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { db, firebase } from "../../../firebase/firebase";
-import { convertirASlug } from "../../helpers/convertirASlug";
+import { firebase } from "../../../firebase/firebase";
+// import { convertirASlug } from "../../helpers/convertirASlug";
 import TituloDesplegable from "../curso/titulo-desplegable/TituloDesplegable";
 import "./CursosDinamicos.css";
 import "../dj/DJ.css";
 import { ArrayCursos } from '../dj/ArraysCursosOnDemand';
+import mercadopagoLogo from './img/mercadopago.png';
+import ReactDOMServer from 'react-dom/server';
+import LoadingPagoPage from './LoadingPayPage';
+
 
 export const CursosDinamicos = () => {
   const { slug } = useParams();
   const [curso, setCurso] = useState(null);
-  const [cargando, setCargando] = useState(true);
 //   const mensaje = "Hola,%20quisiera%20saber%20si%20hay%20cupos%20disponibles%20para";  // Mensaje predefinido codificado
 //   const numero = "5493513417537";
 
@@ -23,30 +26,6 @@ export const CursosDinamicos = () => {
     console.log("🔍 Curso encontrado en ArrayCursos:", cursoEncontrado);
     setCurso(cursoEncontrado);
 
-
-
-    const obtenerCurso = async () => {
-      try {
-        const snapshot = await db.collection("cursos_publicos").get();
-        const cursos = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-
-        const cursoEncontrado = cursos.find(c => convertirASlug(c.nombre) === slug);
-
-        if (cursoEncontrado) {
-        //   setCurso(cursoEncontrado);
-        }
-
-        setCargando(false);
-      } catch (error) {
-        console.error("❌ Error al cargar el curso:", error);
-        setCargando(false);
-      }
-    };
-
-    obtenerCurso();
   }, [slug]);
 
 
@@ -55,77 +34,67 @@ export const CursosDinamicos = () => {
 
 
   // Funcion boton para probar un pago desde mercdado pago
-      const probarPago = async () => {
-          const user = firebase.auth().currentUser;
-          if (!user) {
-              alert("Debes estar logueado para probar.");
-              return;
-          }
-  
-          // 👇 Abrir una nueva pestaña de inmediato (sin contenido aún)
-          const newTab = window.open('', '_blank');
-  
-          try {
-              const token = await user.getIdToken();
-  
-              const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json",
-                      Authorization: `Bearer ${token}`,
-                  },
-                  body: JSON.stringify({
-                      cursoId: curso.cursoId,
-                      cursoNombre: curso.nombre,
-                      uid: user.uid,
-                      base_url: base_url, // 👈 esto manda el dominio actual
-                  }),
-              });
-  
-              const data = await response.json();
-              console.log("✅ Preferencia creada:", data);
-  
-              if (data.init_point) {
-                  // 👇 Redirigir la pestaña que ya se abrió
-                  newTab.location.href = data.init_point;
-              } else {
-                  newTab.close(); // cerrar si no hay link
-                  alert("No se generó el link de pago.");
-              }
-          } catch (error) {
-              console.error("❌ Error al generar link de pago:", error);
-              if (newTab) newTab.close();
-              alert("Error al generar link de pago.");
-          }
-      };
+    const probarPago = async () => {
+        const user = firebase.auth().currentUser;
+        if (!user) {
+            alert("Debes estar logueado para probar.");
+            return;
+        }
+
+        // 👇 Abrir una nueva pestaña de inmediato (sin contenido aún)
+        const newTab = window.open('', '_blank');
+        
+
+
+        const logoUrl = `${window.location.origin}/public/logo-groove.jpg`;
 
 
 
+        if (newTab) {
+            const loadingHtml = ReactDOMServer.renderToString(<LoadingPagoPage logoUrl={logoUrl} />);
+            newTab.document.write(loadingHtml);
+
+            newTab.document.close();
+        }
+
+        
+
+        try {
+            // if(true)return;
+            const token = await user.getIdToken();
+
+            const response = await fetch("https://backend-groove-pi69.onrender.com/api/create_preference", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    cursoId: curso.cursoId,
+                    cursoNombre: curso.nombre,
+                    uid: user.uid,
+                    base_url: base_url, // 👈 esto manda el dominio actual
+                }),
+            });
+
+            const data = await response.json();
+            console.log("✅ Preferencia creada:", data);
+
+            if (data.init_point) {
+                // 👇 Redirigir la pestaña que ya se abrió
+                newTab.location.href = data.init_point;
+            } else {
+                newTab.close(); // cerrar si no hay link
+                alert("No se generó el link de pago.");
+            }
+        } catch (error) {
+            console.error("❌ Error al generar link de pago:", error);
+            if (newTab) newTab.close();
+            alert("Error al generar link de pago.");
+        }
+    };
 
 
-    // Hook para detectar cambios en el tamaño de la ventana
-    const [width2, setWidth] = useState(window.innerWidth);
-
-    // Actualizar el ancho cuando la ventana cambia de tamaño
-    useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    // Función para obtener los estilos dinámicos
-    const dynamicHeight = ()=> {
-        const width = width2;
-
-        const style = {
-            height: width < 490 ? "500px" : "300px",
-            // maxHeight: "800px",
-            width: "100%",
-            // position: "relative"
-        };
-
-        return style;
-    }
 
 
     const img2 = () => {
@@ -151,24 +120,6 @@ export const CursosDinamicos = () => {
 
 
 
-
-//   if (cargando) return <div className="d-flex justify-content-center align-items-center flex-row">
-//     <h3 className="text-center my-5 py-5">Cargando curso</h3>
-//     <div className="spinner-border text-white mx-2 my-auto" role="status"></div>
-//   </div>
-
-//   if (!curso) return <h3 className="text-center my-5 py-5">❌ Curso no encontrado</h3>;
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div className="app-wrapper position-relative">
             
@@ -179,7 +130,6 @@ export const CursosDinamicos = () => {
             <div className="content position-relative">
                 <header 
                     className="position-relative" 
-                    // style={dynamicHeight()}
                     style={{
                         width: "100%",
                         height: "300px",

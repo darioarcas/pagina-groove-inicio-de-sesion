@@ -28,17 +28,17 @@ export const TarjetasCursos = ({ArrayCursos, youtube=false, inicio=false, onDema
           {ArrayCursos.map((curso, index) => {
             return (
               <div key={index} className={!inicio ? '' : 'col-12 col-md-4 mb-5'}>
-                <div className="card sombra">
+                <div className="card sombra" style={{backgroundColor:"rgba(116, 116, 116, 0.15)", backdropFilter:"blur(12px)"}}>
                   <Link to={`${location.pathname}/${curso.id}`}>
                     <img src={curso.img} className="card-img-top" alt="imagen del curso" />
                   </Link>
                   <div className={`card-body tarjeta`}>
                     <h5 className="card-title fs-5 fw-bold text-uppercase">{curso.titulo}</h5>
-                    <p className="card-text fs-6 fw-bold opacity-50"><small className="text-body-secondary">{curso.descipcion}</small></p>
+                    <p className="card-text fs-6"><small>{curso.descipcion}</small></p>
                   </div>
 
                   <div className="card-body d-flex justify-content-between">
-                    <Link to={`${location.pathname}/${curso.id}`} type='button' className="btn btn-outline-dark text-black fw-bolder fw-semibold p-2 mx-auto" style={{width:"70%"}}>Ver Más</Link>
+                    <Link to={`${location.pathname}/${curso.id}`} type='button' className="btn btn-light text-white fw-bolder fw-semibold p-2 mx-auto" style={{width:"70%", backgroundColor:"rgba(88, 88, 88, 0.38)"}}>Ver Más</Link>
                     {/* <Link to={`${location.pathname}`} type='button' className="btn btn-outline-info opacity-50 fw-semibold p-2 mx-auto" style={{width:"43%"}}>Comprar</Link> */}
                   </div>
                 </div>
@@ -58,7 +58,7 @@ export const TarjetasCursos = ({ArrayCursos, youtube=false, inicio=false, onDema
           {ArrayCursos.map((curso, index) => {
             return (
               <div key={index} className={inicio ? 'w-75 mx-auto' : 'col-12 col-md-6 mb-5'}>
-                <div className="card sombra">
+                <div className="card sombra" style={{backgroundColor:"rgba(116, 116, 116, 0.15)", backdropFilter:"blur(12px)"}}>
                   {/* <Link to={`${location.pathname}/${curso.id}`}>
                     <img src={curso.img} className="card-img-top" alt="imagen del curso" />
                   </Link> */}
@@ -77,7 +77,7 @@ export const TarjetasCursos = ({ArrayCursos, youtube=false, inicio=false, onDema
 
 
                   <div className="card-body tarjeta">
-                    <h5 className="card-title fs-6 fw-bold">{curso.titulo}</h5>
+                    <h5 className="card-title fs-6 fw-bold mt-2">{curso.titulo}</h5>
                     <p className="card-text fs-6 fw-bold opacity-50"><small className="text-body-secondary">{curso.descipcion}</small></p>
                   </div>
 

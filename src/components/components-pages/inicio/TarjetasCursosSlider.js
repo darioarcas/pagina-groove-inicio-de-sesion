@@ -47,7 +47,7 @@ const TarjetasCursosSlider = ({ ArrayCursos, youtube = 0 }) => {
         >
           {ArrayCursos.map((curso, index) => (
             <div key={index} className="slider-item" style={{marginRight:"30px"}}>
-              <div className="card sombra">
+              <div className="card" style={{backgroundColor:"rgba(116, 116, 116, 0.26)", backdropFilter:"blur(12px)"}}>
                 <Link to={`${curso.pathname}`}>
                   <img
                     src={curso.img}
@@ -57,7 +57,7 @@ const TarjetasCursosSlider = ({ ArrayCursos, youtube = 0 }) => {
                   />
                 </Link>
                 <div className="card-body tarjeta" style={{height:"60px"}}>
-                  <h5 className="card-title fs-6 fw-bold text-uppercase text-dark">{curso.titulo}</h5>
+                  <h5 className="card-title fs-6 fw-bold mt-2">{curso.titulo}</h5>
                   {/* <p className="card-text fs-6 fw-bold opacity-50">
                     <small className="text-body-secondary">{curso.descipcion}</small>
                   </p> */}
@@ -66,8 +66,8 @@ const TarjetasCursosSlider = ({ ArrayCursos, youtube = 0 }) => {
                   <Link
                     to={`${curso.pathname}/${curso.id}`}
                     type="button"
-                    className="btn btn-outline-dark text-black fw-bolder fw-semibold p-2 mx-auto"
-                    style={{ width: '70%' }}
+                    className="btn btn-light text-white fw-bolder fw-semibold p-2 mx-auto"
+                    style={{width:"70%", backgroundColor:"rgba(88, 88, 88, 0.38)"}}
                   >
                     Ver Curso
                   </Link>

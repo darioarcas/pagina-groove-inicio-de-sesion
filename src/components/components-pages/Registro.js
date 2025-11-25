@@ -1,4 +1,4 @@
-// Registro.js
+// src/components/components-pages/Registro.js
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";

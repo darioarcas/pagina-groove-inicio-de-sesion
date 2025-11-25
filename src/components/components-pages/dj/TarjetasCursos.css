@@ -1,7 +1,7 @@
 
 .sombra{
     
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 12); /* Sombra difusa */
+    box-shadow: 0 0 12px rgba(175, 175, 175, 0.849); /* Sombra difusa */
 }
 
 
@@ -44,6 +44,8 @@
     -webkit-box-orient: vertical;      /* Asegura que la orientación sea vertical */
     overflow: hidden;                  /* Oculta el texto que excede el límite */
     text-overflow: ellipsis;           /* Muestra "..." al final del texto truncado */
+    color: rgb(212, 212, 212);
+    font-weight: 300;
 }
 
 
@@ -73,7 +75,7 @@
 
 
 .card-title{
-    color: black;
+    color: rgb(255, 255, 255);
 }
   
   

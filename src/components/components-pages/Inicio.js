@@ -18,16 +18,23 @@ export const Inicio = () => {
   const imagenesGaleria = [...ArrayInicio[1]];
   const todosLosCursos = [...ArrayProduccionMusical, ...ArrayCursos];
   return (
-    <div className="pt-5">
+    <div className="app-wrapper position-relative">
 
-      <SeccionFondo titulo={<h2 className="fw-semibold">Conoce nuestra Academia</h2>} contenido={<Carrusel imagenes={imagenesGaleria} />} imagenFondo={fondoSeccion1}/>
+      {/* Fondo con círculos animados */}
+      <div className="background-gradient position-fixed w-100 h-100 top-0 start-0 z-n1"></div>
+
+      <div className="content position-relative">
+
+        <SeccionFondo titulo={<h2 className="fw-semibold">Conoce nuestra Academia</h2>} contenido={<Carrusel imagenes={imagenesGaleria} />} imagenFondo={fondoSeccion1}/>
 
 
-      <SeccionFondo titulo="Descubrí la formación que se adapte perfectamente a los que buscas y necesitas" contenido={<TarjetasCursosSlider ArrayCursos={todosLosCursos}/>} imagenFondo={fondoSeccion1}/>
+        <SeccionFondo titulo="Descubrí la formación que se adapte perfectamente a los que buscas y necesitas" contenido={<TarjetasCursosSlider ArrayCursos={todosLosCursos}/>} imagenFondo={fondoSeccion1}/>
 
 
 
-      <SeccionFondo titulo="TUTORIALES Y NOVEDADES" contenido={<YouTubePlaylist playlistId={'PL2a32sHFSitvcGFIEdnC2BVDnJTmkoFnj'} resultados={1} inicio={true}/>} imagenFondo={fondoSeccion1}/>
+        <SeccionFondo titulo="TUTORIALES Y NOVEDADES" contenido={<YouTubePlaylist playlistId={'PL2a32sHFSitvcGFIEdnC2BVDnJTmkoFnj'} resultados={1} inicio={true}/>} imagenFondo={fondoSeccion1}/>
+      </div>
+
 
     </div>
   )

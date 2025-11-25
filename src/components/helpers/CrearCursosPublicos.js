@@ -1,3 +1,5 @@
+// src/components/helpers/CrearCursosPublicos.js
+
 import React from "react";
 import { db } from "../../firebase/firebase";
 import Swal from "sweetalert2";
@@ -7,55 +9,55 @@ export const CrearCursos = () => {
   const [cursosPrivados, setCursosPrivados] = useState([]);
   const cursos = [
   {
-        cursoId: "49IDOMB1Y4Ggenk24eiJ",
+        cursoId: "pDNPw6ufGVUIDK92bBHb",
         nombre: "Curso de Mezcla y Masterizacion Incial",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "FDCOyzRIApEF6xgiS5N9",
+        cursoId: "Ds4La90WmSxEzdyC3CuO",
         nombre: "Curso de DJ Urbano Inicial",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "HNxJyZfHaJZqNjyFAuSN",
+        cursoId: "xU8cTi81WXJIAP4vZBrE",
         nombre: "Curso de DJ con Traktor",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "NA0adiIpNSZWAYHKuEb7",
+        cursoId: "nps0NwWeiM0iNSi0eJKG",
         nombre: "Curso de DJ con CDJ Pioneer Avanzado",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "l5PXiyL9cxMEn1OSHTv9",
+        cursoId: "FtKt6g2fieCbOuqN64h8",
         nombre: "Curso de Produccion Musical Electronica con Ableton Inicial",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "o95L1ZtDuWeBfRf1AGJx",
+        cursoId: "Rqs84SWXb9q0Q778zsnb",
         nombre: "Curso de Produccion Musical Electronica con Ableton Avanzado",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "oCGt5o0drabaZz6az8nC",
+        cursoId: "AZWe4N6HbE2KKM1XQiCC",
         nombre: "Curso de DJ con CDJ Pioneer Inicial",
         descripcion: "",
         img: "",
       },
   {
-        cursoId: "rJdF20ieqRgOHbyQ6dFI",
+        cursoId: "M3FEyummGSJHiaqltt6s",
         nombre: "Curso de Progressive Avanzado Intensivo con Ableton",
         descripcion: "HOLAAAAAAAAA",
         img: "",
       },
   {
-        cursoId: "ydPPmUt2Ukpyz2Anma1n",
+        cursoId: "e1NbdSjHO5q7QlVY3jlq",
         nombre: "Curso de Produccion Musical Urbana con Ableton",
         descripcion: "",
         img: "",
@@ -67,7 +69,7 @@ export const CrearCursos = () => {
     for (let i = 1; i <= cantidad; i++) {
       temario.push({
         titulo: `Modulo ${i}`,
-        descripcion: "",
+        descripcion: "",        
       });
     }
     return temario;
@@ -79,6 +81,7 @@ export const CrearCursos = () => {
         // Usamos add() para generar ID automático
         await db.collection("cursos_publicos").add({
           nombre: curso.nombre,
+          precio:"",
           descripcion: curso.descripcion,
           temario: generarTemario(16),
           img: "",

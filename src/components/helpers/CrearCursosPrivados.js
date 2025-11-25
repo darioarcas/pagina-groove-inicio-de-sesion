@@ -1,3 +1,5 @@
+// src/components/helpers/CrearCursosPrivados.js
+
 import React from "react";
 import { db } from "../../firebase/firebase"; // Usás tu archivo firebase.js clásico
 
@@ -44,6 +46,7 @@ export const CrearCursos = () => {
         // Usamos add() para generar ID automático
         await db.collection("cursos_privados").add({
           nombre: nombreCurso,
+          precio:"",
           descripcion: "",
           clases: generarClases(16),
           imagen: "",
