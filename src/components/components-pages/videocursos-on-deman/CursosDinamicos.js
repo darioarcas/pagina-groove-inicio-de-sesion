@@ -1,3 +1,6 @@
+// src/components/components-pages/videocursos-on-deman/CursosDinamicos.js
+
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { firebase } from "../../../firebase/firebase";
