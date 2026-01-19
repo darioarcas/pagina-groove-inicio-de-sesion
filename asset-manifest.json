@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/pagina-groove-inicio-de-sesion/static/css/main.bf2197f5.css",
-    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.21d37f98.js",
+    "main.js": "/pagina-groove-inicio-de-sesion/static/js/main.d2fa5ab7.js",
     "static/media/dj-cdj-inicial-on-demand.png": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-inicial-on-demand.aa3b67fbc8dff32ca3a8.png",
     "static/media/curso-de-dj-urbano-inicial.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-urbano-inicial.ff99dc421509b92720f9.png",
+    "static/media/produccion-ableton-inicial.jpg": "/pagina-groove-inicio-de-sesion/static/media/produccion-ableton-inicial.0c66768d5a2f02613ddf.jpg",
     "static/media/produ-avanzada-progressive.jpg": "/pagina-groove-inicio-de-sesion/static/media/produ-avanzada-progressive.00ede182dcb0af8305b6.jpg",
     "static/media/curso-de-dj-con-traktor.png": "/pagina-groove-inicio-de-sesion/static/media/curso-de-dj-con-traktor.76b1cacf4d7f5a8eb30c.png",
     "static/media/dj-cdj-1.jpg": "/pagina-groove-inicio-de-sesion/static/media/dj-cdj-1.b28bf470a5222b255c49.jpg",
@@ -43,10 +44,10 @@
     "static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.webp": "/pagina-groove-inicio-de-sesion/static/media/curso-de-produccion-musical-electronica-con-ableton-inicial.2e1f14b0b48637580309.webp",
     "index.html": "/pagina-groove-inicio-de-sesion/index.html",
     "main.bf2197f5.css.map": "/pagina-groove-inicio-de-sesion/static/css/main.bf2197f5.css.map",
-    "main.21d37f98.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.21d37f98.js.map"
+    "main.d2fa5ab7.js.map": "/pagina-groove-inicio-de-sesion/static/js/main.d2fa5ab7.js.map"
   },
   "entrypoints": [
     "static/css/main.bf2197f5.css",
-    "static/js/main.21d37f98.js"
+    "static/js/main.d2fa5ab7.js"
   ]
 }
